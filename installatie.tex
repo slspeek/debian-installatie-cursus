@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Debian installatie] %optional
+{Debian installatie met preseed}
+
+% \subtitle{A short story}
+
+\author[S.L.Speek] % (optional)
+{Steven L. Speek}
+
+\institute[ACC] % (optional)
+{
+  Actief Computer Centrum
+}
+
+\date[\today{}] % (optional)
+{\today{}}
+
+% \logo{\includegraphics[height=1cm]{overleaf-logo}}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Inhoudsopgave}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
+
+\begin{document}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+\begin{frame}
+\frametitle{Inhoudsopgave}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+
+\section{Installatie media}
+
+%---------------------------------------------------------
+%Changing visivility of the text
+\begin{frame}
+\frametitle{Installatie media}
+Het aanmaken van USB-stick met de \textbf{debian-installer}
+
+\begin{itemize}
+    \item<1-> Download van image van \href{https://debian.org}{debian.org}
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------
+\section{De installer booten}
+
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------
+\section{Automatische installatie}
+
+%---------------------------------------------------------
+%Two columns
+
+\end{document}
