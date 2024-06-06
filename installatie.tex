@@ -1,7 +1,13 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[dutch]{babel}
-
+\usepackage{hyperref}
+% colored links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+}
 \usetheme{Madrid}
 \usecolortheme{default}
 
@@ -35,13 +41,13 @@
 %The next block of commands puts the table of contents at the 
 %beginning of each section and highlights the current section:
 
-\AtBeginSection[]
-{
-  \begin{frame}
-    \frametitle{Inhoudsopgave}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
+% \AtBeginSection[]
+% {
+%   \begin{frame}
+%     \frametitle{Inhoudsopgave}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
 %------------------------------------------------------------
 
 
@@ -64,13 +70,19 @@
 \section{Installatie media}
 
 %---------------------------------------------------------
-%Changing visivility of the text
 \begin{frame}
-\frametitle{Installatie media}
-Het aanmaken van USB-stick met de \textbf{debian-installer}
+\frametitle{Installatie media downloaden}
+Klik `Downloaden' op \href{https://debian.org}{debian.org}
 
+\centering
+\includegraphics[width=\textwidth]{img/debian-downloaden.png} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Installatie USB-stick maken}
 \begin{itemize}
-    \item<1-> Download van image van \href{https://debian.org}{debian.org}
+    \item Download en installeer \href{https://rufus.ie}{Rufus}
+    \item Maak een USB-stick met het debian ISO-image met Rufus
 \end{itemize}
 \end{frame}
 
@@ -80,11 +92,33 @@ Het aanmaken van USB-stick met de \textbf{debian-installer}
 %---------------------------------------------------------
 \section{De installer booten}
 
+\begin{frame}
+  \frametitle{De \textbf{debian-installer} booten}
+  \begin{itemize}
+    \item Steek de USB-stick met de debian ISO-image in de computer
+    \item Start de computer op en ga het \href{https://www.boot-disk.com/quest_bootmenu.htm}{boot menu} in
+  \end{itemize}
+
+\end{frame}
 %---------------------------------------------------------
 
 
 %---------------------------------------------------------
 \section{Automatische installatie}
+
+\begin{frame}
+  \frametitle{Geavanceerde installatie kiezen}
+
+  \centering
+  \includegraphics[width=\textwidth]{img/advanced-options.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Automatische installatie kiezen}
+
+  \centering
+  \includegraphics[width=\textwidth]{img/automated-install.png}
+\end{frame}
 
 %---------------------------------------------------------
 %Two columns
