@@ -1,6 +1,7 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[dutch]{babel}
+\usepackage{keystroke}
 
 \usepackage{hyperref}
 % colored links
@@ -97,8 +98,11 @@ Klik `Downloaden' op \href{https://debian.org}{debian.org}
 \begin{frame}
   \frametitle{De \textbf{debian-installer} booten}
   \begin{itemize}
-    \item Steek de USB-stick met de debian ISO-image in de computer
+    \item Steek de USB-stick met het debian ISO-image in de computer
+    \item Sluit de computer bedraad aan op het netwerk
+    \item Zoek \href{https://www.boot-disk.com/quest_bootmenu.htm}{hier} de toets op die op uw computer het \href{https://www.boot-disk.com/quest_bootmenu.htm}{boot menu} toont
     \item Start de computer op en ga het \href{https://www.boot-disk.com/quest_bootmenu.htm}{boot menu} in
+    \item Kies de USB-stick met het debian ISO-image
   \end{itemize}
 
 \end{frame}
@@ -106,6 +110,17 @@ Klik `Downloaden' op \href{https://debian.org}{debian.org}
 
 
 %---------------------------------------------------------
+\begin{frame}
+  \frametitle{Installer grub menu}
+  \begin{itemize}
+    \item binnen 30 seconden \DArrow indrukken
+    \item \DArrow, \UArrow\  en \Enter om deze menu's te bedienen
+  \end{itemize}
+  
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/installer-grub-menu.png}
+\end{frame}
+
 \section{Automatische installatie}
 
 \begin{frame}
@@ -120,6 +135,42 @@ Klik `Downloaden' op \href{https://debian.org}{debian.org}
 
   \centering
   \includegraphics[width=\textwidth]{img/automated-install.png}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Bedienen van de debian installer}
+   \begin{itemize}
+      \item \Tab{} en \RArrow{} om verder te gaan
+      \item \Shift{}+\Tab{} en \LArrow{} om terug te gaan
+      \item \UArrow{}, \DArrow{}, \PgUp{}, en \PgDown om in lijsten te navigeren
+      \item \Spacebar om checkboxen te selecten of deselecteren
+      \item \Enter om te kiezen
+   \end{itemize}
+\end{frame}
+
+\subsection{Netwerk}
+
+\begin{frame}
+   \frametitle{Netwerk interface kiezen}
+   Indien de computer ook wifi heeft moet een keuze worden gemaakt voor de bedraade netwerk aansluiting
+\end{frame}
+
+\subsection{Preconfiguration}
+
+\begin{frame}
+   \frametitle{Preconfiguration file}
+   U voert \texttt{https://slspeek.github.io/debian/gnome-complete.cfg} in
+   
+   \centering
+   \includegraphics[width=0.8\textwidth]{img/preseed-adres.png}
+\end{frame}
+
+\subsection{Disk indeling}
+\begin{frame}
+   \frametitle{Gehele disk kiezen}
+   
+   \centering
+   \includegraphics[width=\textwidth]{img/gehele-disk-kiezen.png}
 \end{frame}
 
 %---------------------------------------------------------

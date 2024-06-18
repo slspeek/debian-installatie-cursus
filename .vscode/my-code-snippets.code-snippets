@@ -1,0 +1,55 @@
+{
+   
+    "Down arrow": {
+		"scope": "latex",
+		"prefix": "darr",
+		"body": [
+			"↓"
+		]
+	},
+	"Up arrow": {
+		"scope": "latex",
+		"prefix": "uarr",
+		"body": [
+			"↑"
+		]
+	},
+	"fullscreen image": {
+		"scope": "latex",
+		"prefix": "img",
+		"body": [
+            "",
+			"\\centering",
+            "\\includegraphics[width=\\textwidth]{img/$1.png}",
+            "$0"
+		]
+	},
+    "frame": {
+        "scope": "latex",
+        "prefix": "fr",
+        "body": [
+            "\\begin{frame}",
+            "   \\frametitle{$1}",
+            "$0",
+            "\\end{frame}"
+        ]
+    },
+    "list": {
+        "scope": "latex",
+        "prefix": "ite",
+        "body": [
+            "\\begin{itemize}",
+            "   \\item $1",
+            "\\end{itemize}"
+        ]
+    },
+    "item": {
+        "scope": "latex",
+        "prefix": "it",
+        "body": [
+            "\\item $1",
+        ]
+    }
+
+ 
+}
