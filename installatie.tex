@@ -1,6 +1,7 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[dutch]{babel}
+
 \usepackage{hyperref}
 % colored links
 \hypersetup{
@@ -8,6 +9,7 @@
     linkcolor=blue,
     urlcolor=blue,
 }
+
 \usetheme{Madrid}
 \usecolortheme{default}
 
@@ -41,13 +43,13 @@
 %The next block of commands puts the table of contents at the 
 %beginning of each section and highlights the current section:
 
-% \AtBeginSection[]
-% {
-%   \begin{frame}
-%     \frametitle{Inhoudsopgave}
-%     \tableofcontents[currentsection]
-%   \end{frame}
-% }
+\AtBeginSection[]
+{
+  \begin{frame}<handout:0>
+    \frametitle{Inhoudsopgave}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 %------------------------------------------------------------
 
 
@@ -121,6 +123,5 @@ Klik `Downloaden' op \href{https://debian.org}{debian.org}
 \end{frame}
 
 %---------------------------------------------------------
-%Two columns
 
 \end{document}

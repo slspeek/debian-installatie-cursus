@@ -9,10 +9,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run makefile
-        run: make print
-      - name: Release generated pdf
+        run: make handout beamer
+      - name: Release generated pdfs
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: installatie.pdf
+          files: |
+            installatie-beamer.pdf
+            installatie-handout.pdf
+
             
