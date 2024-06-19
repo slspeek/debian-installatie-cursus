@@ -21,4 +21,4 @@ viewbeamer: beamer
 		open $(BEAMER_NAME).pdf
 
 clean:
-		rm {tex/,}*.aux *.lg *.4* *.image.* *.htoc *.html *.css *.dvi *.haux *.pdf *.log *.out *.idv *.tmp *.xref *.toc; exit 0
+		rm {tex/,}*.aux *.aux *.nav *.snm *.lg *.4* *.image.* *.htoc *.html *.css *.dvi *.haux *.pdf *.log *.out *.idv *.tmp *.xref *.toc; exit 0

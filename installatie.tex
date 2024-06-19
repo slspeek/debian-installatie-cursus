@@ -44,12 +44,31 @@
 %The next block of commands puts the table of contents at the 
 %beginning of each section and highlights the current section:
 
-\AtBeginSection[]
-{
-  \begin{frame}<handout:0>
-    \frametitle{Inhoudsopgave}
-    \tableofcontents[currentsection]
-  \end{frame}
+% \AtBeginSection[]
+% {
+%   \begin{frame}<handout:0>
+%     \frametitle{Inhoudsopgave}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+\newif\iflattersubsect
+
+\AtBeginSection[] {
+    \begin{frame}<beamer>
+      \frametitle{Inhoudsopgave}
+      \tableofcontents[currentsection]
+     \end{frame}
+    \lattersubsectfalse
+}
+
+\AtBeginSubsection[] {
+    \iflattersubsect
+    \begin{frame}<beamer>
+      \frametitle{Inhoudsopgave}
+      \tableofcontents[currentsubsection]
+    \end{frame}
+    \fi
+    \lattersubsecttrue
 }
 %------------------------------------------------------------
 
@@ -143,7 +162,7 @@ Klik `Downloaden' op \href{https://debian.org}{debian.org}
       \item \Tab{} en \RArrow{} om verder te gaan
       \item \Shift{}+\Tab{} en \LArrow{} om terug te gaan
       \item \UArrow{}, \DArrow{}, \PgUp{}, en \PgDown om in lijsten te navigeren
-      \item \Spacebar om checkboxen te selecten of deselecteren
+      % \item \Spacebar om checkboxen te selecten of deselecteren
       \item \Enter om te kiezen
    \end{itemize}
 \end{frame}
@@ -155,7 +174,17 @@ Klik `Downloaden' op \href{https://debian.org}{debian.org}
    Indien de computer ook wifi heeft moet een keuze worden gemaakt voor de bedraade netwerk aansluiting
 \end{frame}
 
-\subsection{Preconfiguration}
+\subsection{Preseed}
+\begin{frame}
+   \frametitle{Wat is preseeding?}
+   \begin{itemize}
+      \item Preseeding beantwoord met behulp van een preconfiguation bestand vragen van de debian-installer
+      \item Voorbeeld \href{https://www.debian.org/releases/stable/example-preseed.txt}{https://www.debian.org/releases/stable/example-preseed.txt}
+      \item Meer info op \href{https://wiki.debian.org/DebianInstaller/Preseed}{https://wiki.debian.org/DebianInstaller/Preseed}
+   \end{itemize}
+
+
+\end{frame}
 
 \begin{frame}
    \frametitle{Preconfiguration file}
@@ -165,14 +194,82 @@ Klik `Downloaden' op \href{https://debian.org}{debian.org}
    \includegraphics[width=0.8\textwidth]{img/preseed-adres.png}
 \end{frame}
 
+\begin{frame}
+   \frametitle{Alternatieve configuraties}
+   Op \href{https://slspeek.github.io/debian/}{Nederlandse Debian preseeds} vindt u meer configuraties:
+   \begin{itemize}
+      \item \textbf{Personal} varianten waarbij u in de installer een gebruiker kunt opgeven (ipv tux)
+      \item Niet \textbf{complete} varianten met minder ge\"{i}nstalleerde pakketen
+      \item Andere desktop varianten \begin{itemize}
+         \item MATE
+         \item LXDE
+      \end{itemize}
+
+   \end{itemize}
+
+\end{frame}
+
 \subsection{Disk indeling}
 \begin{frame}
    \frametitle{Gehele disk kiezen}
-   
+   \onslide<2>{\Enter op om door te gaan}
    \centering
-   \includegraphics[width=\textwidth]{img/gehele-disk-kiezen.png}
+   \includegraphics[width=\textwidth]{img/gehele-disk-kiezen.png}<1->
 \end{frame}
 
+\begin{frame}
+  \frametitle{Disk kiezen}
+  \onslide<2>{Kies met \UArrow en \DArrow een disk en bevestig met \Enter}
+  \centering
+  \includegraphics[width=\textwidth]{img/disk-kiezen.png}<1->
+\end{frame}
+
+\begin{frame}
+   \frametitle{Disk indeling accepteren}
+   \onslide<2>{\Enter op om door te gaan}
+   \centering
+   \includegraphics[width=\textwidth]{img/indeling-accepteren.png}<1->
+\end{frame}
+
+\begin{frame}
+   \frametitle{Disk indeling bevestigen}
+   \onslide<2->{\Tab om keuze op \texttt{Ja} te zetten, bevestig daarna met \Enter}
+   
+   \centering
+   \includegraphics[width=\textwidth]{img/indeling-bevestigen.png}<1-2>
+   \includegraphics[width=\textwidth]{img/indeling-bevestigd.png}<3>
+\end{frame}
+
+\begin{frame}<beamer>
+  \frametitle{Basissysteem}
+   
+   \centering
+   \includegraphics[width=\textwidth]{img/basissysteem.png}
+\end{frame}
+
+\begin{frame}<beamer>
+  \frametitle{Programmatuur installeren}
+   
+   \centering
+   \includegraphics[width=\textwidth]{img/programmatuur.png}
+\end{frame}
+
+\begin{frame}<beamer>
+  \frametitle{Preseed scripts}
+   
+   \centering
+   \includegraphics[width=\textwidth]{img/preseed.png}
+\end{frame}
+
+\subsection{Herstarten}
+
+\begin{frame}
+   \frametitle{Reboot na geslaagde installatie}
+    \onslide<2>{Inloggen met \Enter dan als wachtwoord \texttt{tux} gevolgd door \Enter}
+    \centering
+    \includegraphics[width=\textwidth]{img/geslaagde-gnome-installatie.png}<1->
+    
+\end{frame}
 %---------------------------------------------------------
 
 \end{document}
